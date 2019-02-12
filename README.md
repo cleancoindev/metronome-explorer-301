@@ -19,8 +19,8 @@ npm start
 
 The following environment variables control the service beahvior:
 
-- `EXPLORER_BASE_PATH`: Base URL of the target explorer.
-- `EXPLORER_URL`: Path on the target explorer. Replaces `:hash` with the required transaction hash.
+- `EXPLORER_BASE_URL`: Base URL of the target explorer.
+- `EXPLORER_PATH`: Path on the target explorer. Replaces `:hash` with the required transaction hash.
 - `LOGGER_*`: Control logging to console and Papertrail service.
 - `PORT`: Defaults to 3004
 
