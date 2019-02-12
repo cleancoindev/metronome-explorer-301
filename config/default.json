@@ -1,0 +1,22 @@
+{
+  "explorer": {
+    "baseUrl": "https://ropsten.etherscan.io",
+    "path": "/tx/:hash"
+  },
+  "logger": {
+    "Console": {
+      "colorize": true,
+      "level": "debug",
+      "prettyPrint": true,
+      "stringify": true
+    },
+    "Papertrail": {
+      "colorize": true,
+      "flushOnClose": true,
+      "handleExceptions": true,
+      "inlineMeta": true,
+      "level": "info"
+    }
+  },
+  "port": 3004
+}

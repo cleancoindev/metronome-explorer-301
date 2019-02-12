@@ -1,0 +1,18 @@
+{
+  "explorer": {
+    "baseUrl": "EXPLORER_BASE_URL",
+    "path": "EXPLORER_PATH"
+  },
+  "logger": {
+    "Console": {
+      "level": "LOGGER_CONSOLE_LEVEL"
+    },
+    "Papertrail": {
+      "host": "LOGGER_PAPERTRAIL_HOST",
+      "level": "LOGGER_PAPERTRAIL_LEVEL",
+      "port": "LOGGER_PAPERTRAIL_PORT",
+      "program": "LOGGER_PAPERTRAIL_PROGRAM"
+    }
+  },
+  "port": "PORT"
+}
