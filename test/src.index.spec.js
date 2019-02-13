@@ -9,14 +9,17 @@ const { listen } = require('../src')
 chai.should()
 
 const randomHex = length => `0x${randomstring({ length, charset: 'hex' })}`
+const randomAddr = () => randomHex(40)
 const randomTxId = () => randomHex(64)
 
 const port = 3004
 const testConfig = {
   explorer: {
+    accountPath: '/tokens/:contract/balances/:address',
     baseUrl: 'http://test-explorer',
-    path: '/path/:hash'
+    txPath: '/txs/:hash'
   },
+  metTokenAddress: randomAddr(),
   port
 }
 const testLogger = {
@@ -37,8 +40,24 @@ describe('Redirector', function () {
       followRedirect: false
     })
       .then(function (response) {
-        const { baseUrl, path } = testConfig.explorer
-        const redirectUrl = `${baseUrl}${path.replace(':hash', hash)}`
+        const { baseUrl, txPath } = testConfig.explorer
+        const redirectUrl = `${baseUrl}${txPath.replace(':hash', hash)}`
+        response.headers.location.should.equal(redirectUrl)
+        response.statusCode.should.equal(301)
+      })
+  })
+
+  it('should redirect accounts requests', function () {
+    const address = randomAddr()
+    return got(`http://localhost:${port}/accounts/${address}`, {
+      followRedirect: false
+    })
+      .then(function (response) {
+        const { explorer: { baseUrl, accountPath }, metTokenAddress } = testConfig
+        const path = accountPath
+          .replace(':contract', metTokenAddress)
+          .replace(':address', address)
+        const redirectUrl = `${baseUrl}${path}`
         response.headers.location.should.equal(redirectUrl)
         response.statusCode.should.equal(301)
       })

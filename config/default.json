@@ -1,7 +1,8 @@
 {
   "explorer": {
+    "accountPath": "/token/:contract?a=:address",
     "baseUrl": "https://ropsten.etherscan.io",
-    "path": "/tx/:hash"
+    "txPath": "/tx/:hash"
   },
   "logger": {
     "Console": {
@@ -18,5 +19,6 @@
       "level": "info"
     }
   },
+  "metTokenAddress": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3",
   "port": 3004
 }

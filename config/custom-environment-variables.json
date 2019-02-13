@@ -1,7 +1,8 @@
 {
   "explorer": {
+    "accountPath": "EXPLORER_ACCOUNT_PATH",
     "baseUrl": "EXPLORER_BASE_URL",
-    "path": "EXPLORER_PATH"
+    "txPath": "EXPLORER_TX_PATH"
   },
   "logger": {
     "Console": {
@@ -14,5 +15,6 @@
       "program": "LOGGER_PAPERTRAIL_PROGRAM"
     }
   },
+  "metTokenAddress": "METTOKEN_ADDRESS",
   "port": "PORT"
 }
