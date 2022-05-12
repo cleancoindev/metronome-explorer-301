@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "before-exit": "1.0.0",
-    "config": "3.0.1",
+    "config": "3.3.7",
     "cors": "2.8.5",
     "express": "4.16.4",
     "p-defer": "1.0.0",
