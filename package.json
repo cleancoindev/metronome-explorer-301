@@ -16,7 +16,7 @@
     "before-exit": "1.0.0",
     "config": "3.0.1",
     "cors": "2.8.5",
-    "express": "4.16.4",
+    "express": "4.17.3",
     "p-defer": "1.0.0",
     "winston": "2.4.4"
   },
